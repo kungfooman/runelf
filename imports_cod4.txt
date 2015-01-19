@@ -1,0 +1,165 @@
+00000000      DF *UND*	0000003d  GLIBC_2.0   fileno
+00000000      DF *UND*	0000011c  GLIBC_2.0   fputs
+00000000      DF *UND*	0000001d  GLIBC_2.0   __errno_location
+00000000      DF *UND*	00000034  GLIBC_2.0   sprintf
+00000000      DF *UND*	00000060  GLIBC_2.0   srand
+00000000      DF *UND*	00000038  GLIBC_2.0   mkdir
+00000000      DF *UND*	00000049  GLIBC_2.0   isalpha
+00000000      DF *UND*	000000d0  GLIBC_2.0   strerror
+00000000      DF *UND*	0000003f  GLIBC_2.1.3 __cxa_atexit
+00000000      DF *UND*	00000036              _Znaj
+00000000      DF *UND*	000000ca  GLIBC_2.0   sysconf
+00000000      DF *UND*	000000a2              __cxa_begin_catch
+00000000      DF *UND*	0000015c  GLIBC_2.0   qsort
+00000000      DF *UND*	00000021              _ZNSs4_Rep10_M_destroyERKSaIcE
+00000000      DF *UND*	00000069  GLIBC_2.1   sem_trywait
+00000000      DF *UND*	00000021              _ZdaPv
+00000000      DF *UND*	00000070  GLIBC_2.0   sqrtf
+00000000      DF *UND*	000000dc  GLIBC_2.0   signal
+00000000      DF *UND*	000000a4  GLIBC_2.0   __xstat
+00000000      DF *UND*	000001d1  GLIBC_2.0   realloc
+00000000      DF *UND*	00000049  GLIBC_2.0   isspace
+00000000      DF *UND*	000000c4  GLIBC_2.0   vsprintf
+00000000      DF *UND*	00000038  GLIBC_2.0   localtime
+00000000      DF *UND*	00000167  GLIBC_2.0   strchr
+00000000      DF *UND*	000000cf  GLIBC_2.0   vsnprintf
+00000000      DF *UND*	000000ed  GLIBC_2.0   getenv
+00000000      DF *UND*	000001b5  GLIBC_2.1   sem_wait
+00000000      DF *UND*	00000028  GLIBC_2.0   inet_addr
+00000000      DF *UND*	00000026  GLIBC_2.0   system
+00000000      DF *UND*	00000082  GLIBC_2.0   strncpy
+00000000      DF *UND*	0000005d              _ZNSs12_M_leak_hardEv
+00000000      DF *UND*	00000070  GLIBC_2.0   write
+00000000      DF *UND*	0000006c  GLIBC_2.0   sendto
+00000000      DF *UND*	000002a3  GLIBC_2.2   sem_timedwait
+00000000      DF *UND*	000001be  GLIBC_2.0   pow
+00000000      DF *UND*	00000049  GLIBC_2.0   dlclose
+00000000      DF *UND*	00000042  GLIBC_2.0   toupper
+00000000      DF *UND*	00000038  GLIBC_2.0   rename
+00000000      DF *UND*	00000043  GLIBC_2.0   memset
+00000000      DF *UND*	0000004f  GLIBC_2.0   __strtol_internal
+00000000      DF *UND*	00000025              _ZdlPv
+00000000      DF *UND*	000000e0  GLIBC_2.0   __libc_start_main
+00000000      DF *UND*	00000187  GLIBC_2.0   execl
+00000000      DF *UND*	00000013  GLIBC_2.0   _exit
+00000000      DF *UND*	000001b9  GLIBC_2.0   strrchr
+00000000      DF *UND*	000000b1  GLIBC_2.0   tcgetattr
+00000000      DF *UND*	00000058              _ZNSsC1EPKcRKSaIcE
+00000000      DF *UND*	00000038  GLIBC_2.0   chmod
+00000000      DF *UND*	00000070  GLIBC_2.0   read
+00000000      DF *UND*	0000008b  GLIBC_2.0   asinf
+0804a4ec      DF *UND*	00000036              __cxa_pure_virtual
+00000000      DF *UND*	00000048  GLIBC_2.0   usleep
+00000000      DF *UND*	000000da  GLIBC_2.0   readdir
+00000000      DF *UND*	00000038  GLIBC_2.0   gettimeofday
+00000000      DF *UND*	000000ad  GLIBC_2.0   free
+00000000      DF *UND*	000000aa              _ZNSs7reserveEj
+00000000      DF *UND*	00000009  GLIBC_2.0   atan
+00000000      DF *UND*	00000102              __cxa_allocate_exception
+00000000      DF *UND*	00000038  GLIBC_2.0   access
+00000000      DF *UND*	00000009  GLIBC_2.0   atanf
+00000000      DF *UND*	0000009b  GLIBC_2.0   dlsym
+00000000      DF *UND*	000000fe              _ZSt20__throw_out_of_rangePKc
+00000000      DF *UND*	000000cf  GLIBC_2.0   fflush
+00000000      DF *UND*	0000006d  GLIBC_2.0   sqrt
+0804a5cc      DF *UND*	000003e6              __gxx_personality_v0
+00000000      DF *UND*	00000150  GLIBC_2.0   opendir
+00000000      DF *UND*	0000003a  GLIBC_2.0   ioctl
+00000000      DF *UND*	00000037  GLIBC_2.0   socket
+00000000      DF *UND*	000000d6  GLIBC_2.0   fseek
+00000000      DF *UND*	0000009d  GLIBC_2.0   pthread_mutex_unlock
+00000000      DF *UND*	00000035  GLIBC_2.0   isatty
+00000000      DF *UND*	000000a4  GLIBC_2.0   atan2f
+00000000      DF *UND*	0000000a  GLIBC_2.0   pthread_mutexattr_destroy
+00000000      DF *UND*	0000017b  GLIBC_2.1   fclose
+00000000      DF *UND*	00000174              _ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_
+00000000      DF *UND*	000001b3  GLIBC_2.0   memalign
+00000000      DF *UND*	00000022  GLIBC_2.0   _setjmp
+00000000      DF *UND*	0000007e              _ZNKSs4findEPKcjj
+00000000      DF *UND*	00000076  GLIBC_2.0   acos
+00000000      DF *UND*	00000027  GLIBC_2.0   memcpy
+00000000      DF *UND*	00000026  GLIBC_2.0   cosf
+00000000      DF *UND*	00000035  GLIBC_2.1   fopen
+00000000      DF *UND*	0000006a              __cxa_throw
+00000000      DF *UND*	00000026  GLIBC_2.0   cos
+00000000      DF *UND*	00000034  GLIBC_2.0   unlink
+00000000      DF *UND*	00000121  GLIBC_2.0   getpwuid
+00000000      DF *UND*	00000048  GLIBC_2.0   __strtod_internal
+00000000      DF *UND*	00000115              _ZNSs6appendEPKcj
+00000000      DF *UND*	0000001f  GLIBC_2.0   strcpy
+00000000      DF *UND*	00000068  GLIBC_2.1   dlopen
+00000000      DF *UND*	00000158  GLIBC_2.0   ftell
+00000000      DF *UND*	00000026  GLIBC_2.0   longjmp
+00000000      DF *UND*	00000039  GLIBC_2.0   printf
+00000000      DF *UND*	0000001d  GLIBC_2.0   ctime
+00000000      DF *UND*	00000037  GLIBC_2.0   bind
+00000000      DF *UND*	0000000c  GLIBC_2.0   getuid
+00000000      DF *UND*	0000003a  GLIBC_2.0   pthread_mutex_init
+00000000      DF *UND*	00000077  GLIBC_2.0   strcasecmp
+00000000      DF *UND*	0000009f              __cxa_end_catch
+00000000      DF *UND*	00000088  GLIBC_2.0   select
+00000000      DF *UND*	00000090  GLIBC_2.0   closedir
+00000000      DF *UND*	00000065  GLIBC_2.0   close
+00000000      DF *UND*	00000134  GLIBC_2.0   fwrite
+00000000      DF *UND*	00000047  GLIBC_2.0   isalnum
+00000000      DF *UND*	00000023  GLIBC_2.0   fprintf
+00000000      DF *UND*	000000c0  GLIBC_2.0   strstr
+00000000      DF *UND*	0000008b  GLIBC_2.0   acosf
+00000000      DF *UND*	00000010  GLIBC_2.0   time
+00000000      DF *UND*	00000095  GLIBC_2.0   strncat
+00000000      DF *UND*	0000005b  GLIBC_2.0   remove
+00000000      DF *UND*	000001a1  GLIBC_2.0   malloc
+00000000      DF *UND*	000000c6  GLIBC_2.0   pthread_mutex_lock
+00000000      DF *UND*	00000049  GLIBC_2.0   isupper
+00000000      DF *UND*	0000000f              _ZN9__gnu_cxx18__exchange_and_addEPVii
+00000000      DF *UND*	0000009d  GLIBC_2.0   gethostname
+00000000      DF *UND*	00000098  GLIBC_2.0   atan2
+00000000      DF *UND*	000000d2  GLIBC_2.0   fputc
+00000000      DF *UND*	00000007  GLIBC_2.0   rintf
+00000000      DF *UND*	00000034  GLIBC_2.0   rmdir
+00000000      DF *UND*	0000021b  GLIBC_2.0   dlerror
+00000000      DF *UND*	00000131  GLIBC_2.1   pthread_create
+00000000      DF *UND*	00000048              _ZSt18_Rb_tree_incrementPSt18_Rb_tree_node_base
+00000000      DF *UND*	0000024c  GLIBC_2.0   sleep
+00000000      DF *UND*	0000007b  GLIBC_2.0   strncasecmp
+00000000      DF *UND*	00000058  GLIBC_2.0   memmove
+00000000      DF *UND*	0000004c              _ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base
+00000000      DF *UND*	000001aa  GLIBC_2.0   strcat
+00000000      DF *UND*	00000129  GLIBC_2.0   getcwd
+00000000      DF *UND*	0000015f  GLIBC_2.1   sem_post
+00000000      DF *UND*	00000030  GLIBC_2.0   asctime
+00000000      DF *UND*	00000092  GLIBC_2.0   log
+00000000      DF *UND*	00000026  GLIBC_2.0   sinf
+00000000      DF *UND*	00000017  GLIBC_2.0   fork
+00000000      DF *UND*	000000d5              _ZNSs6assignERKSs
+00000000      DF *UND*	00000037  GLIBC_2.0   setsockopt
+00000000      DF *UND*	000000e2  GLIBC_2.0   tcsetattr
+00000000      DF *UND*	000000b9  GLIBC_2.0   fcntl
+00000000      DF *UND*	00000017  GLIBC_2.0   rand
+00000000      DF *UND*	00000034  GLIBC_2.0   sscanf
+00000000      DF *UND*	000000a4  GLIBC_2.0   __fxstat
+00000000      DF *UND*	000000ae  GLIBC_2.0   strncmp
+00000000      DF *UND*	00003b65  GLIBC_2.0   vfprintf
+00000000      DF *UND*	00000144  GLIBC_2.0   __udivdi3
+00000000      DF *UND*	00000015  GLIBC_2.1   sem_getvalue
+00000000      DF *UND*	0000002b  GLIBC_2.0   tan
+00000000      DF *UND*	000000f3  GLIBC_2.0   fread
+00000000      DF *UND*	00000073  GLIBC_2.0   seteuid
+00000000      DF *UND*	0000003b  GLIBC_2.0   snprintf
+00000000      DF *UND*	00000013  GLIBC_2.0   pthread_mutexattr_init
+00000000      DF *UND*	00000026  GLIBC_2.0   sin
+00000000      DF *UND*	0000005f  GLIBC_2.0   strdup
+00000000      DF *UND*	0000019f  GLIBC_2.0   gethostbyname
+00000000      DF *UND*	00000065              __cxa_rethrow
+00000000      DF *UND*	0000002a  GLIBC_2.1   pthread_mutexattr_settype
+00000000      DF *UND*	0000006c  GLIBC_2.0   recvfrom
+00000000      DF *UND*	000000c9  GCC_3.0     _Unwind_Resume
+00000000      DF *UND*	00000042  GLIBC_2.0   tolower
+00000000      DF *UND*	00000025  GLIBC_2.0   strcmp
+00000000      DF *UND*	000000d6  GLIBC_2.0   exit
+00000000      DF *UND*	00000082              _ZNSsC1ERKSs
+00000000      DF *UND*	0000006d  GLIBC_2.1   sem_init
+00000000      DF *UND*	0000000b  GLIBC_2.0   pthread_self
+00000000      DF *UND*	000000ec              _ZNSs6assignEPKcj
+00000000      DF *UND*	000001c3              _ZNSs9_M_mutateEjjj
+00000000      DF *UND*	0000000c  GLIBC_2.0   geteuid
