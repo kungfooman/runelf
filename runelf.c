@@ -30,19 +30,7 @@ int file_get_contents(char *filename, unsigned char **buffer, int *len) {
 	return 1;
 }
 
-#define BIN_SECT_PLT_START      (void *)0x08048310
-#define BIN_SECT_PLT_LENGTH             0x00000050
-#define BIN_SECT_TEXT_START     (void *)0x08048360
-#define BIN_SECT_TEXT_LENGTH            0x000001b0
-#define BIN_SECT_TEXT_FOFFSET           0x00000360
-#define BIN_SECT_RODATA_START   (void *)0x08048528
-#define BIN_SECT_RODATA_LENGTH          0x00000025
-#define BIN_SECT_RODATA_FOFFSET         0x00000528
-#define BIN_SECT_DATA_START     (void *)0x08049710
-#define BIN_SECT_DATA_LENGTH            0x00000008
-#define BIN_SECT_DATA_FOFFSET           0x00000710
-#define BIN_SECT_BSS_START      (void *)0x08049718
-#define BIN_SECT_BSS_LENGTH             0x00000004
+#include "simple_sections.h"
 
 int Sys_MemoryProtectWrite(void* startoffset, int len)
 {
@@ -92,11 +80,8 @@ int Sys_ProtectMemory() {
 typedef enum {
 	LD_dummy, /*start at 1*/
 	
-	#if 1
-		LD_puts,
-		LD_printf,
-		LD___libc_start_main,
-	#endif
+	#include "simple_plt_offsets.h"
+	
 }plt_offset_t;
 
 DWORD SetJump(DWORD addr, void* destination){
