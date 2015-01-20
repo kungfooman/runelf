@@ -5,6 +5,9 @@
 	$cod2 = parse_names(file_get_contents("imports_cod2.txt"));
 	$cod4 = parse_names(file_get_contents("imports_cod4.txt"));
 	
+	$imports = $cod4;
+	sort($imports);
+	
 	//$a_no_b = array_diff($cod2, $cod4);
 	//print_r($a_no_b);
 	//$a_no_b = array_diff($cod4, $cod2);
@@ -31,9 +34,9 @@
 		return $tmp;
 	}
 	
-	$values = parse_value(file_get_contents("compare_cod4_hooks.txt"));
+	$cod4values = parse_value(file_get_contents("compare_cod4_hooks.txt"));
 	
-	//print_r($values);
+	//print_r($cod4values);
 	
 	$sym2lib = file_get_contents("compare_symbol_to_lib.txt");
 	
@@ -49,35 +52,52 @@
 		return false;
 	}
 
-	$missing = array();
-	foreach ($cod2 as $import) {
-		$func = "_isdead_dbg_$import); // >>><<<<<<<<<<<<<<<<<<<<>MISSING<<>>>>>>>>>>>>>>>>>>>>>>><<";
-		$missing_ = false;
-		if (isset($values[$import]))
-			$func = $values[$import];
-		else
-			$missing_ = true;
-		$name = $import;
-		$lib = symbol_to_lib($name);
-		//echo "########## $import $lib name=$name ##########\n";
+	$libs = array();
+	foreach ($imports as $import) {
+		$lib = symbol_to_lib($import);
+		//echo "########## import=$import $lib ##########\n";
 		if ($lib) {
+			$libname = $lib;
 			$lib = str_replace("libstdc++-6.dll"    , "handle_libstdcpp6", $lib);
 			$lib = str_replace("libwinpthread-1.dll", "handle_pthreads"  , $lib);
-			echo "	Sys_CoD4LinkObject($import, GetProcAddress($lib, \"$name\"));\n";
-			$missing_ = false;
+			$libs[$libname]["list"][] = array("call"=>"Sys_CoD4LinkObject(LD_$import, GetProcAddress($lib, \"$import\"));", "import"=>$import, "func"=>"");
+			$libs[$libname]["varname_lib"] = $lib;
 		} else {
-			echo "	Sys_CoD4LinkObject($import, $func);\n";
-			
+			if (isset($cod4values[$import])) {
+				$func = $cod4values[$import];
+				$libs["nolib"]["list"][] = array("call"=>"Sys_CoD4LinkObject(LD_$import, $func);", "import"=>$import, "func"=>$func);
+			} else {
+				$libs["stubs"]["name"][] = "stub_$import";
+				$libs["stubs"]["list"][] = array("call"=>"Sys_CoD4LinkObject(LD_$import, stub_$import);", "import"=>$import, "func"=>"");
+			}
 		}
-		
-		if ($missing_)
-			$missing[] = "_isdead_dbg_$import";
 	}
 	
+	foreach ($libs as $libname=>$linkfuncs) {
+		echo "\n";
+		echo "\n";
+		echo "// libname=$libname\n";
+		if (substr($libname, -4) == ".dll") {
+			$varname = $linkfuncs["varname_lib"];
+			echo "HMODULE $varname = LoadLibrary(\"$libname\");\n";
+		}
+		//echo "// stubname={$linkfuncs["stubname"]}\n";
+		echo "\n";
+		foreach ($linkfuncs["list"] as $tmp) {
+			$call = $tmp["call"];
+			$import = $tmp["import"];
+			$func = $tmp["func"];
+			//echo "printf(\"import=$import func=$func\\n\");\n";
+			echo "$call\n";
+		}
+	}
+	echo "\n\n";
+	echo "\n\n";
 	
-	foreach ($missing as $m) {
-		echo "int $m() {\n";
-		echo "	Com_Printf(\"Is ded: $m\");\n";
+	foreach ($libs["stubs"]["name"] as $name) {
+		echo "int $name() {\n";
+		echo "	printf(\"$name()\\n\");\n";
+		echo "	__asm__(\"int $3\");\n";
 		echo "	return 1;\n";
 		echo "}\n";
 	}
