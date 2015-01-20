@@ -1,16 +1,9 @@
 <?php
 
-	function parse($filename) {
-		$lines = explode("\n", $filename);
-		foreach ($lines as &$line)
-			//$line = substr($line, 0, -1); // remove each comma
-			$line = trim($line);
-		return $lines;
-	}
-	
-	$cod2 = parse(file_get_contents("compare_cod2.txt"));
-	$cod4 = parse(file_get_contents("compare_cod4.txt"));
-	
+	include("plt_offsets.php");
+
+	$cod2 = parse_names(file_get_contents("imports_cod2.txt"));
+	$cod4 = parse_names(file_get_contents("imports_cod4.txt"));
 	
 	//$a_no_b = array_diff($cod2, $cod4);
 	//print_r($a_no_b);
@@ -30,6 +23,10 @@
 		preg_match_all('/\((.*),(.*)\)/', $content, $lines);
 		$lines[1] = array_map("trim", $lines[1]);
 		$lines[2] = array_map("trim", $lines[2]);
+		
+		// LD_printf to printf e.g.
+		$lines[1] = array_map(function($ldname) {return substr($ldname, 3);}, $lines[1]);
+		
 		$tmp = array_combine($lines[1], $lines[2]);
 		return $tmp;
 	}
@@ -60,9 +57,9 @@
 			$func = $values[$import];
 		else
 			$missing_ = true;
-		$name = substr($import, 3);
+		$name = $import;
 		$lib = symbol_to_lib($name);
-		//echo "########## $lib name=$name ##########\n";
+		//echo "########## $import $lib name=$name ##########\n";
 		if ($lib) {
 			$lib = str_replace("libstdc++-6.dll"    , "handle_libstdcpp6", $lib);
 			$lib = str_replace("libwinpthread-1.dll", "handle_pthreads"  , $lib);
