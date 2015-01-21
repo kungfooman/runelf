@@ -1,19 +1,16 @@
 <?php
-
-	include("plt_offsets.php");
-
-	$cod2 = parse_names(file_get_contents("imports_cod2.txt"));
-	$cod4 = parse_names(file_get_contents("imports_cod4.txt"));
-	
-	$imports = $cod4;
-	sort($imports);
-	
+	//$cod2 = parse_names(file_get_contents("imports_cod2.txt"));
+	//$cod4 = parse_names(file_get_contents("imports_cod4.txt"));
 	//$a_no_b = array_diff($cod2, $cod4);
 	//print_r($a_no_b);
 	//$a_no_b = array_diff($cod4, $cod2);
 	//print_r($a_no_b);
 	
-	
+	include("plt_offsets.php");
+
+	$imports = parse_names(file_get_contents($argv[1]));
+	sort($imports);
+
 	function parse_value($content) {
 		$lines = explode("\n", $content);
 		$tmp = array();
@@ -73,13 +70,25 @@
 		}
 	}
 	
+	foreach ($libs["stubs"]["name"] as $name) {
+		echo "int $name() {\n";
+		echo "	printf(\"$name()\\n\");\n";
+		echo "	//__asm__(\"int $3\");\n";
+		echo "	return 1;\n";
+		echo "}\n";
+	}
+	
+	echo "\n\n";
+	echo "\n\n";
+	
+	echo "int Sys_CoD4Linker() {\n";
 	foreach ($libs as $libname=>$linkfuncs) {
 		echo "\n";
 		echo "\n";
-		echo "// libname=$libname\n";
+		echo "	// libname=$libname\n";
 		if (substr($libname, -4) == ".dll") {
 			$varname = $linkfuncs["varname_lib"];
-			echo "HMODULE $varname = LoadLibrary(\"$libname\");\n";
+			echo "	HMODULE $varname = LoadLibrary(\"$libname\");\n";
 		}
 		//echo "// stubname={$linkfuncs["stubname"]}\n";
 		echo "\n";
@@ -88,23 +97,16 @@
 			$import = $tmp["import"];
 			$func = $tmp["func"];
 			//echo "printf(\"import=$import func=$func\\n\");\n";
-			echo "$call\n";
+			echo "	$call\n";
 		}
 	}
-	echo "\n\n";
-	echo "\n\n";
 	
-	foreach ($libs["stubs"]["name"] as $name) {
-		echo "int $name() {\n";
-		echo "	printf(\"$name()\\n\");\n";
-		echo "	__asm__(\"int $3\");\n";
-		echo "	return 1;\n";
-		echo "}\n";
-	}
+	echo "}\n";
+
 	
 	
 	
-	//foreach ($cod2 as $import) {
+	//foreach ($imports as $import) {
 	//	$name = substr($import, 3);
 	//	echo "	printf(\"handle: %.8p addr=%.8p name=$name\\n\", handle, GetProcAddress(handle_pthread, \"$name\"));\n";
 	//}
